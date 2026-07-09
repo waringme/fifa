@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-news",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-07-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.fifa.com/en",
+    "originPage": "FIFA homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "news-editorial",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "grid of editorial cards (image + eyebrow tag + headline + optional description)",
+    "buttonCount": 0,
+    "imageCount": 10
+  },
+  "reuseGuidance": {
+    "suitableFor": ["news/article card grids", "editorial story listings", "Inside FIFA / Top stories style card sets"],
+    "notSuitableFor": ["match fixture score cards", "small icon/topic tiles", "portrait media rails"]
+  },
+  "usage": {
+    "pagesUsing": ["/en"],
+    "reuseCount": 2,
+    "lastUsed": "2026-07-09T00:00:00.000Z"
+  }
+}

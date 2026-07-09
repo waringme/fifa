@@ -1,0 +1,139 @@
+/* Block: table-ranking — FIFA/Coca-Cola World Rankings */
+
+/* Values extracted from source computed styles (fifa.com/en). */
+
+/* Ranking section background matches source (rgb(238,242,251)).
+   Scoped to the block wrapper because the EDS section is shared with other blocks.
+   Uses higher specificity than `main > .section > div` to override padding/max-width. */
+main .section .table-ranking-wrapper {
+  background-color: rgb(238 242 251);
+  padding: 64px 24px 80px;
+  margin: 0;
+  max-width: none;
+}
+
+.table-ranking.block {
+  width: 100%;
+  color: rgb(80 91 115);
+  font-family: var(--body-font-family);
+}
+
+.table-ranking.block table {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0 16px;
+  background-color: transparent;
+  font-size: 14px;
+  color: rgb(80 91 115);
+}
+
+/* Body rows rendered as cards: white bg, subtle border, rounded corners. */
+.table-ranking.block table tbody tr {
+  background-color: rgb(255 255 255);
+}
+
+.table-ranking.block table td {
+  height: 67px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(80 91 115);
+  text-align: left;
+  vertical-align: middle;
+  border-top: 1px solid rgb(228 232 240);
+  border-bottom: 1px solid rgb(228 232 240);
+}
+
+/* Card rounding + side borders on first/last cells of each row. */
+.table-ranking.block table td:first-child {
+  border-left: 1px solid rgb(228 232 240);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.table-ranking.block table td:last-child {
+  border-right: 1px solid rgb(228 232 240);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.table-ranking.block table td p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(80 91 115);
+  line-height: 1.2;
+}
+
+/* Column 1 — rank number. */
+.table-ranking.block table td.table-ranking-col1 {
+  width: 48px;
+  font-weight: 700;
+  color: rgb(3 18 43);
+  text-align: center;
+}
+
+.table-ranking.block table td.table-ranking-col1 p {
+  font-weight: 700;
+  color: rgb(3 18 43);
+  font-size: 16px;
+}
+
+/* Column 2 — movement (up/down delta). */
+.table-ranking.block table td.table-ranking-col2 {
+  width: 40px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.table-ranking.block table td.table-ranking-col2 p {
+  font-size: 16px;
+}
+
+/* Column 3 — team: flag + name laid out inline. */
+.table-ranking.block table td.table-ranking-col3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 67px;
+}
+
+.table-ranking.block table td.table-ranking-col3 p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.table-ranking.block table td.table-ranking-col3 picture {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.table-ranking.block table td.table-ranking-col3 img {
+  width: 32px;
+  height: 24px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Column 4 — total points. */
+.table-ranking.block table td.table-ranking-col4 {
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Mobile: keep table readable, allow horizontal scroll if needed. */
+@media (width < 600px) {
+  .table-ranking.block {
+    overflow-x: auto;
+  }
+}
+
+/* Desktop widths. */
+@media (width >= 900px) {
+  .table-ranking.block table {
+    max-width: 640px;
+  }
+}

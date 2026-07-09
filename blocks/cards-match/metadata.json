@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-match",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-07-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.fifa.com/en",
+    "originPage": "FIFA homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "match-fixtures",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "horizontal rail of fixture cards (competition, stage, teamA flag+name, score/time, teamB flag+name)",
+    "buttonCount": 0,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": ["match/fixture score cards", "sports result rails", "head-to-head team cards with flags"],
+    "notSuitableFor": ["editorial article cards", "large image feature cards", "topic/icon tiles"]
+  },
+  "usage": {
+    "pagesUsing": ["/en"],
+    "reuseCount": 1,
+    "lastUsed": "2026-07-09T00:00:00.000Z"
+  }
+}

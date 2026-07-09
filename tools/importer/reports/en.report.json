@@ -1,0 +1,23 @@
+{
+  "status": "success",
+  "url": "https://www.fifa.com/en",
+  "path": "en",
+  "timestamp": "2026-07-09T09:45:48.147Z",
+  "title": "FIFA | The Home of Football",
+  "template": "homepage",
+  "blocks": [
+    "hero-promo",
+    "carousel-stories",
+    "carousel-spotlight",
+    "cards-match",
+    "cards-moments",
+    "cards-news",
+    "cards-news",
+    "cards-promo",
+    "cards-promo",
+    "embed-external",
+    "hero-banner",
+    "hero-banner",
+    "table-ranking"
+  ]
+}

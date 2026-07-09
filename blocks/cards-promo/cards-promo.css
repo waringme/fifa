@@ -1,0 +1,98 @@
+/* Block: cards-promo — promotional tiles (image + label link) */
+
+/* Values extracted from fifa.com computed styles. */
+
+/* --- Layout: horizontal row of promo cards, wraps on overflow --- */
+.cards-promo > ul {
+  list-style: none;
+  margin: 0;
+  padding: 32px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.cards-promo > ul > li {
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* --- Image cell (first card-body when it holds a picture) --- */
+.cards-promo .cards-promo-card-image,
+.cards-promo > ul > li > div:first-child {
+  line-height: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.cards-promo > ul > li img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* --- Collapse empty cells (source authored images are empty) --- */
+.cards-promo > ul > li > div:empty {
+  display: none;
+}
+
+/* --- Label / link --- */
+.cards-promo .cards-promo-card-body {
+  margin: 0;
+}
+
+.cards-promo .cards-promo-card-body p {
+  margin: 0;
+  padding-top: 16px;
+}
+
+.cards-promo .cards-promo-card-body p:empty {
+  display: none;
+  padding: 0;
+}
+
+.cards-promo .cards-promo-card-body a,
+.cards-promo .cards-promo-card-body a:any-link {
+  display: block;
+  padding: 0;
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  color: rgb(3 18 43);
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/* Remove the global Font Awesome chevron on promo labels */
+.cards-promo .cards-promo-card-body a::after,
+.cards-promo .cards-promo-card-body a:any-link::after {
+  content: none;
+}
+
+.cards-promo .cards-promo-card-body a:hover,
+.cards-promo .cards-promo-card-body a:focus {
+  color: rgb(4 86 148);
+  text-decoration: none;
+}
+
+/* --- Desktop: 3-up (or auto-fill for the many-tile variant) --- */
+@media (width >= 900px) {
+  .cards-promo > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Many-tile variant ("What FIFA does"): denser grid */
+  .cards-promo.four-up > ul,
+  .cards-promo > ul:has(> li:nth-child(7)) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "variantName": "table-ranking",
+  "baseBlock": "table",
+  "version": "1.0.0",
+  "created": "2026-07-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.fifa.com/en",
+    "originPage": "FIFA homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "rankings",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "ranking table with columns: rank, movement, team (flag+name), points",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": ["ranking/leaderboard tables", "standings with team flags and points", "structured comparison data"],
+    "notSuitableFor": ["card grids", "narrative content", "media galleries"]
+  },
+  "usage": {
+    "pagesUsing": ["/en"],
+    "reuseCount": 1,
+    "lastUsed": "2026-07-09T00:00:00.000Z"
+  }
+}

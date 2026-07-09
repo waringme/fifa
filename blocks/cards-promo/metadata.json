@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-promo",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-07-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.fifa.com/en",
+    "originPage": "FIFA homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "promo-tiles",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "grid of promotional/topic tiles (image + label + link)",
+    "buttonCount": 0,
+    "imageCount": 11
+  },
+  "reuseGuidance": {
+    "suitableFor": ["promotional tile grids (Tickets/Hospitality/Official)", "topic navigation tiles (What FIFA does)", "image + label link tiles"],
+    "notSuitableFor": ["text-heavy article cards", "match fixture cards", "portrait media rails"]
+  },
+  "usage": {
+    "pagesUsing": ["/en"],
+    "reuseCount": 2,
+    "lastUsed": "2026-07-09T00:00:00.000Z"
+  }
+}

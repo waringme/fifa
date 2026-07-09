@@ -1,0 +1,196 @@
+/*
+ * carousel-stories — FIFA "Stories" rail
+ * Horizontal, scrollable row of circular story thumbnails with a 2-line caption
+ * below each. Prev/next arrows flank the rail. Values extracted from
+ * getComputedStyle on fifa.com/en (see migration-work/carousel-stories-extracted.css).
+ */
+
+.carousel-stories .carousel-stories-slides-container {
+  position: relative;
+}
+
+.carousel-stories .carousel-stories-slides,
+.carousel-stories .carousel-stories-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* The scrollable rail — flex row, horizontal scroll, hidden scrollbar */
+.carousel-stories .carousel-stories-slides {
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+  padding: 7px 44px;
+  margin: 0;
+  overflow: auto hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: none;
+  scrollbar-width: none;
+}
+
+.carousel-stories .carousel-stories-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each story cell — narrow, centered column */
+.carousel-stories .carousel-stories-slide {
+  flex: 0 0 auto;
+  width: 89px;
+  min-height: auto;
+  margin: -7px 6px -7px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+/* Circular thumbnail with a thin FIFA-blue ring */
+.carousel-stories .carousel-stories-slide .carousel-stories-slide-image {
+  width: 80px;
+  height: 80px;
+  margin: 14px 5px 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  padding: 2px;
+  box-shadow: 0 0 0 2px var(--main-accent-color) inset;
+}
+
+.carousel-stories .carousel-stories-slide .carousel-stories-slide-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: static;
+  inset: auto;
+}
+
+.carousel-stories .carousel-stories-slide .carousel-stories-slide-image picture > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Caption below the thumbnail */
+.carousel-stories .carousel-stories-slide .carousel-stories-slide-content {
+  z-index: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+  color: rgb(3 18 43);
+  position: relative;
+  text-align: center;
+}
+
+.carousel-stories .carousel-stories-slide .carousel-stories-slide-content p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Caption link — override global link styling (chevron, blue color, ellipsis) */
+.carousel-stories .carousel-stories-slide .carousel-stories-slide-content a,
+.carousel-stories .carousel-stories-slide .carousel-stories-slide-content a:any-link {
+  display: -webkit-box;
+  width: 100%;
+  padding: 0;
+  color: rgb(3 18 43);
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Remove the global Font Awesome chevron on caption links */
+.carousel-stories .carousel-stories-slide .carousel-stories-slide-content a::after,
+.carousel-stories .carousel-stories-slide .carousel-stories-slide-content a:hover::after {
+  content: none;
+  display: none;
+}
+
+.carousel-stories .carousel-stories-slide .carousel-stories-slide-content a:hover,
+.carousel-stories .carousel-stories-slide .carousel-stories-slide-content a:focus {
+  color: rgb(3 18 43);
+  text-decoration: none;
+}
+
+/* Prev / next arrows — white 40px circles flanking the rail.
+   The two buttons live in one wrapper before the rail; we overlay them at the
+   left/right edges, vertically centred on the 80px thumbnail row. */
+.carousel-stories .carousel-stories-navigation-buttons {
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-stories .carousel-stories-navigation-buttons button {
+  position: absolute;
+  top: 55px; /* centre of thumbnail: 14px margin + 40px (half of 80) */
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  background-color: rgb(255 255 255);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
+  pointer-events: auto;
+  transition: background-color 0.2s;
+}
+
+.carousel-stories .carousel-stories-navigation-buttons button.slide-prev {
+  left: 0;
+}
+
+.carousel-stories .carousel-stories-navigation-buttons button.slide-next {
+  right: 0;
+}
+
+.carousel-stories .carousel-stories-navigation-buttons button:hover,
+.carousel-stories .carousel-stories-navigation-buttons button:focus-visible {
+  background-color: rgb(238 242 251);
+}
+
+/* Chevron glyph inside the arrow buttons */
+.carousel-stories .carousel-stories-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid var(--main-accent-color);
+  border-bottom: 0;
+  border-left: 0;
+  height: 9px;
+  width: 9px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-stories .carousel-stories-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+.carousel-stories .carousel-stories-navigation-buttons button:disabled::after {
+  border-color: rgb(190 197 210);
+}
+
+/* Source rail has no pagination dots — hide the indicator nav */
+.carousel-stories nav {
+  display: none;
+}

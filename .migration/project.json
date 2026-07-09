@@ -1,0 +1,14 @@
+{
+  "type": "xwalk",
+  "sites": {
+    "fifa": {
+      "previewOrg": "waringme",
+      "previewSite": "fifa",
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json",
+      "aemSitePath": "/content/Fifa",
+      "aemAssetsFolderPath": "/content/dam/Fifa",
+      "aemSiteName": "Fifa",
+      "aemSiteTitle": "fifa"
+    }
+  }
+}

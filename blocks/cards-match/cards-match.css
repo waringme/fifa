@@ -1,0 +1,105 @@
+/* cards-match — FIFA "Follow the World Cup action" horizontal fixtures rail */
+
+/* Card palette pulled from source computed styles */
+.cards-match {
+  --cm-card-text: rgb(3 18 43);
+  --cm-card-muted: rgb(80 91 115);
+  --cm-card-border: rgb(228 232 240);
+  --cm-card-bg: #fff;
+}
+
+/* Horizontal scrolling rail */
+.cards-match > ul {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+/* Fixture card */
+.cards-match > ul > li {
+  flex: 0 0 auto;
+  width: 302px;
+  min-height: 225px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cm-card-bg);
+  border: 1px solid var(--cm-card-border);
+  border-radius: 5px;
+  color: var(--cm-card-text);
+  scroll-snap-align: start;
+}
+
+/* Empty image cell (no media authored) — collapse it */
+.cards-match .cards-match-card-image:empty {
+  display: none;
+}
+
+/* Card content area — link-like padded column */
+.cards-match .cards-match-card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 16px 0;
+  color: var(--cm-card-text);
+}
+
+/* Competition label — first paragraph */
+.cards-match .cards-match-card-body p:first-of-type {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--cm-card-text);
+}
+
+/* Stage · venue and date · time — muted supporting paragraphs */
+/* stylelint-disable-next-line no-descending-specificity */
+.cards-match .cards-match-card-body p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--cm-card-muted);
+}
+
+/* Fixture heading (team names) — the emphasized middle line */
+.cards-match .cards-match-card-body h3 {
+  margin: 12px 0 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: var(--cm-card-text);
+}
+
+/* The team-name link should read as plain text, not a decorated EDS button */
+.cards-match .cards-match-card-body h3 a,
+.cards-match .cards-match-card-body h3 a:any-link {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  border-radius: 0;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+.cards-match .cards-match-card-body h3 a::after {
+  content: none;
+}
+
+/* Push date/time to bottom of card */
+.cards-match .cards-match-card-body p:last-of-type {
+  margin-top: auto;
+  padding-bottom: 16px;
+}

@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.fifa.com/en"
+      ],
+      "representativeUrl": "https://www.fifa.com/en",
+      "coverageGaps": [],
+      "description": "FIFA homepage - hero preview carousel, spotlight/news cards, story rail, and content sections",
+      "blocks": [
+        {
+          "name": "hero-promo",
+          "instances": [
+            "main > div > div:nth-of-type(1)"
+          ]
+        },
+        {
+          "name": "carousel-stories",
+          "instances": [
+            "main > div > div:nth-of-type(2)"
+          ]
+        },
+        {
+          "name": "carousel-spotlight",
+          "instances": [
+            "main > div > div:nth-of-type(3)"
+          ],
+          "section": "dark"
+        },
+        {
+          "name": "cards-match",
+          "instances": [
+            "main > div > div:nth-of-type(5)"
+          ]
+        },
+        {
+          "name": "cards-moments",
+          "instances": [
+            "main > div > div:nth-of-type(6)"
+          ]
+        },
+        {
+          "name": "cards-news",
+          "instances": [
+            "main > div > div:nth-of-type(7)",
+            "main > div > div:nth-of-type(15)"
+          ]
+        },
+        {
+          "name": "cards-promo",
+          "instances": [
+            "main > div > div:nth-of-type(8)",
+            "main > div > div:nth-of-type(16)"
+          ]
+        },
+        {
+          "name": "embed-external",
+          "instances": [
+            "main > div > div:nth-of-type(9)"
+          ]
+        },
+        {
+          "name": "hero-banner",
+          "instances": [
+            "main > div > div:nth-of-type(11)",
+            "main > div > div:nth-of-type(13)"
+          ]
+        },
+        {
+          "name": "table-ranking",
+          "instances": [
+            "main > div > div:nth-of-type(14)"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-3",
+          "name": "Hero Spotlight + Preview Carousel",
+          "selector": "main > div > div:nth-of-type(3)",
+          "style": "dark",
+          "blocks": [
+            "carousel-spotlight"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

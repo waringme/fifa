@@ -1,0 +1,31 @@
+{
+  "variantName": "embed-external",
+  "baseBlock": "embed",
+  "version": "1.0.0",
+  "created": "2026-07-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.fifa.com/en",
+    "originPage": "FIFA homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "external-integration",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "single embedded external integration / third-party widget via URI",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": ["external integration embeds", "third-party interactive widgets", "video/social embeds by URL"],
+    "notSuitableFor": ["native content sections", "image galleries"]
+  },
+  "usage": {
+    "pagesUsing": ["/en"],
+    "reuseCount": 1,
+    "lastUsed": "2026-07-09T00:00:00.000Z"
+  }
+}

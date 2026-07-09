@@ -1,0 +1,31 @@
+{
+  "variantName": "carousel-stories",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-07-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.fifa.com/en",
+    "originPage": "FIFA homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "stories-rail",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "horizontal scroll rail of image + short caption slides with prev/next",
+    "buttonCount": 0,
+    "imageCount": 25
+  },
+  "reuseGuidance": {
+    "suitableFor": ["horizontally scrollable thumbnail rails", "story/highlight thumbnail strips", "many-item swipable galleries"],
+    "notSuitableFor": ["single large featured hero rotators", "tabular or list content"]
+  },
+  "usage": {
+    "pagesUsing": ["/en"],
+    "reuseCount": 1,
+    "lastUsed": "2026-07-09T00:00:00.000Z"
+  }
+}

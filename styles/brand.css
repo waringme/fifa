@@ -1,0 +1,33 @@
+:root {
+  /* FIFA brand palette */
+  --fifa-blue: rgb(4 86 148);
+  --fifa-blue-dark: rgb(4 74 128);
+  --fifa-navy: rgb(2 15 42);
+  --fifa-navy-soft: rgb(16 33 57);
+
+  /* fonts — FIFASans is proprietary; Poppins is the documented fallback (loaded via Google Fonts) */
+  --heading-font-family: "FIFASans Regular", poppins, "Noto Sans", "Helvetica Neue", arial, sans-serif;
+  --body-font-family: "FIFASans Regular", poppins, "Noto Sans", "Helvetica Neue", arial, sans-serif;
+
+  /* core colors — content areas are light with dark text */
+  --background-color: #fff;
+  --text-color: rgb(26 26 26);
+  --link-color: var(--fifa-blue);
+  --link-hover-color: var(--fifa-blue-dark);
+
+  /* section variants */
+  --light-section-bg: rgb(238 242 251);
+  --dark-section-bg: var(--fifa-navy);
+
+  /* spacing */
+  --section-padding: 48px;
+  --content-max-width: 1440px;
+
+  /* heading sizes (desktop) */
+  --heading-size-xxl: 48px;
+  --heading-size-xl: 36px;
+  --heading-size-l: 32px;
+  --heading-size-m: 24px;
+  --heading-size-s: 20px;
+  --heading-size-xs: 16px;
+}

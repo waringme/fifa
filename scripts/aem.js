@@ -312,6 +312,22 @@ function createOptimizedPicture(
 ) {
   const url = new URL(src, window.location.href);
   const picture = document.createElement('picture');
+
+  // External images (e.g. FIFA digitalhub/CDN) are not served by the EDS
+  // media pipeline; the ?width/&format optimization params and pathname-only
+  // rewrite break them. Preserve the original absolute URL verbatim.
+  if (url.origin !== window.location.origin) {
+    const img = document.createElement('img');
+    img.setAttribute('loading', eager ? 'eager' : 'lazy');
+    if (fetchpriority || eager) {
+      img.setAttribute('fetchpriority', fetchpriority || 'high');
+    }
+    img.setAttribute('alt', alt);
+    img.setAttribute('src', src);
+    picture.appendChild(img);
+    return picture;
+  }
+
   const { pathname } = url;
   const ext = pathname.substring(pathname.lastIndexOf('.') + 1);
 
@@ -561,7 +577,6 @@ async function fetchPlaceholders(prefix = 'default') {
   }
   return window.placeholders[`${prefix}`];
 }
-
 
 /*
 // eslint-disable-next-line import/prefer-default-export

@@ -1,0 +1,172 @@
+/* cards-news — "Top stories" editorial news grid (FIFA homepage)
+   Source: https://www.fifa.com/en  section[aria-label="Top stories"]
+   All values from getComputedStyle of the source.
+
+   Decorated DOM (see cards-news.js):
+     .cards-news > ul
+       > li.cards-news-lead              (large lead card)
+       > li.cards-news-secondary > ul > li ...  (stacked list)
+   Each card cell:
+     div.cards-news-card-image (optional media) + div.cards-news-card-body (p eyebrow + h3 headline)
+*/
+
+.cards-news {
+  --cards-news-eyebrow-color: var(--main-accent-color, rgb(4 86 148));
+  --cards-news-headline-color: rgb(3 18 43);
+}
+
+/* section vertical rhythm: 24px mobile, 32px desktop */
+.cards-news-wrapper {
+  padding: 24px 0;
+}
+
+/* top-level layout list */
+.cards-news > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cards-news > ul > li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+/* secondary list: stacked cards with dividers */
+.cards-news-secondary > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cards-news-secondary > ul > li {
+  margin: 0;
+  padding: 0 0 16px;
+  border-bottom: 1px solid rgb(230 230 230);
+}
+
+.cards-news-secondary > ul > li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* The authored image cell is empty in this export (no picture), so the JS
+   labels it card-body too. Collapse an empty leading placeholder cell. */
+.cards-news li > div:first-child:not(:has(img), :has(picture)):empty,
+.cards-news li > div.cards-news-card-body:first-child:not(:has(img), :has(picture)) {
+  display: none;
+}
+
+/* media (shown only when an image is actually authored) */
+.cards-news .cards-news-card-image {
+  display: block;
+  line-height: 0;
+}
+
+.cards-news li img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* text cell */
+.cards-news .cards-news-card-body {
+  margin: 0;
+  padding: 0;
+  color: var(--cards-news-headline-color);
+}
+
+/* eyebrow (roofline) — first paragraph, FIFA blue */
+.cards-news .cards-news-card-body > p {
+  margin: 0;
+  padding: 0 0 4px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--cards-news-eyebrow-color);
+  font-family: var(--body-font-family);
+}
+
+/* headline (secondary default: 16px, clamp 2 lines like source) */
+.cards-news .cards-news-card-body h2,
+.cards-news .cards-news-card-body h3,
+.cards-news .cards-news-card-body h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--cards-news-headline-color);
+  font-family: var(--heading-font-family);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* links: inherit type, strip global button chevron/ellipsis/nowrap */
+.cards-news a,
+.cards-news a:any-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.cards-news a:hover,
+.cards-news a:focus {
+  color: var(--cards-news-eyebrow-color);
+  text-decoration: none;
+}
+
+.cards-news a::after,
+.cards-news a:hover::after,
+.cards-news a:focus::after {
+  content: none;
+}
+
+/* lead headline larger (24px / 32px, clamp 3 lines) */
+.cards-news-lead .cards-news-card-body h2,
+.cards-news-lead .cards-news-card-body h3,
+.cards-news-lead .cards-news-card-body h4 {
+  font-size: 24px;
+  line-height: 32px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Desktop: lead left, secondary list right (source is 2 equal columns). */
+@media (width >= 900px) {
+  .cards-news-wrapper {
+    padding: 32px 0;
+  }
+
+  .cards-news > ul {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .cards-news > ul > li.cards-news-lead,
+  .cards-news > ul > li.cards-news-secondary {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}

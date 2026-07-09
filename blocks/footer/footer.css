@@ -1,41 +1,96 @@
 footer {
-  background-color: var(--dark-color);
-  font-size: var(--body-font-size-xs);
-  font-family: var(--light-font-family);
-  background-color: var(--dark-color-opacity);
-  background-color: #000;
+  background-color: rgb(4 86 148);
+  color: #fff;
   width: 100%;
-  z-index: 2;
-  color: #ffffff;
+  font-family: "FIFASans Regular", poppins, "Noto Sans", "Helvetica Neue", arial, sans-serif;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer .footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px;
 }
 
-footer .footer p {
+footer .footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgb(255 255 255 / 20%);
+}
+
+footer .footer-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+footer .footer-social {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 18px;
   margin: 0;
+  padding: 0;
 }
 
-footer .footer img {
-  width: 100px;
-  height: auto;
-  margin-bottom: 20px;
+footer .footer-social a {
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-footer .footer a {
-  color: #ffffff;
+footer .footer-social a:hover {
+  opacity: 0.8;
+}
+
+footer .footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+}
+
+footer .footer-legal {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer-legal a {
+  color: #fff;
   text-decoration: none;
+  font-size: 13px;
 }
 
-footer .footer a:hover {
-  color: var(--main-accent-color);
+footer .footer-legal a:hover {
+  text-decoration: underline;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 50px 32px;
+footer .footer-copyright {
+  margin: 0;
+  font-size: 13px;
+  color: rgb(255 255 255 / 85%);
+}
+
+@media (width <= 899px) {
+  footer .footer-inner {
+    padding: 28px 16px;
+  }
+
+  footer .footer-top,
+  footer .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

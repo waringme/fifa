@@ -1,0 +1,290 @@
+/* Block: carousel-spotlight — FIFA hero spotlight
+   Featured article (eyebrow, headline, description, pill CTA, large square image)
+   on a dark navy background, with a preview strip of the other featured articles.
+   Values extracted from https://www.fifa.com/en computed styles. */
+
+.carousel-spotlight {
+  background-color: var(--fifa-navy, rgb(2 15 42));
+  color: #fff;
+  padding: 40px 0 0;
+}
+
+.carousel-spotlight .carousel-spotlight-slides-container {
+  position: relative;
+}
+
+.carousel-spotlight .carousel-spotlight-slides,
+.carousel-spotlight .carousel-spotlight-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-spotlight .carousel-spotlight-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+}
+
+.carousel-spotlight .carousel-spotlight-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Slide: single column on mobile, text + square image on desktop --- */
+.carousel-spotlight .carousel-spotlight-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 24px;
+  width: 100%;
+}
+
+/* --- Image column (square, cover) --- */
+.carousel-spotlight .carousel-spotlight-slide-image {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-spotlight .carousel-spotlight-slide-image picture {
+  display: block;
+  width: 100%;
+}
+
+.carousel-spotlight .carousel-spotlight-slide-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* --- Content column --- */
+.carousel-spotlight .carousel-spotlight-slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* description (default paragraph) */
+.carousel-spotlight .carousel-spotlight-slide-content p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* eyebrow: first paragraph */
+.carousel-spotlight .carousel-spotlight-slide-content > p:first-child {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #fff;
+  overflow: visible;
+  -webkit-line-clamp: none;
+}
+
+/* headline */
+.carousel-spotlight .carousel-spotlight-slide-content h3 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+  font-family: var(--heading-font-family);
+  color: #fff;
+  margin: 0;
+}
+
+.carousel-spotlight .carousel-spotlight-slide-content h3 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* --- "Read more" pill button --- */
+.carousel-spotlight .carousel-spotlight-slide-content .button-container {
+  margin: 8px 0 0;
+}
+
+.carousel-spotlight .carousel-spotlight-slide-content a.button:any-link,
+.carousel-spotlight .carousel-spotlight-slide-content .button-container a:any-link {
+  display: inline-flex;
+  align-items: center;
+  background-color: #fff;
+  color: rgb(3 18 43);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 100px;
+  text-decoration: none;
+}
+
+.carousel-spotlight .carousel-spotlight-slide-content a.button:any-link:hover,
+.carousel-spotlight .carousel-spotlight-slide-content .button-container a:any-link:hover {
+  background-color: rgb(238 242 251);
+  color: rgb(3 18 43);
+}
+
+/* Source "Read more" pill has no trailing arrow icon */
+.carousel-spotlight .carousel-spotlight-slide-content a.button::after,
+.carousel-spotlight .carousel-spotlight-slide-content .button-container a::after {
+  content: none;
+}
+
+/* --- Preview strip (indicators repurposed as article previews) --- */
+.carousel-spotlight .carousel-spotlight-slide-indicators {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(60%, 1fr);
+  gap: 0;
+  padding: 24px 0 40px;
+  background-color: transparent;
+  overflow-x: auto;
+  line-height: normal;
+}
+
+@media (width >= 900px) {
+  .carousel-spotlight .carousel-spotlight-slide-indicators {
+    grid-auto-columns: 1fr;
+    overflow-x: visible;
+  }
+}
+
+.carousel-spotlight .carousel-spotlight-slide-indicators::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-spotlight .carousel-spotlight-slide-indicator {
+  min-width: 0;
+}
+
+.carousel-spotlight .carousel-spotlight-slide-indicator button {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 16px 24px 0 0;
+  border: 0;
+  border-top: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 0;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.carousel-spotlight .carousel-spotlight-slide-indicator button:disabled {
+  border-top-color: #fff;
+  cursor: default;
+}
+
+.carousel-spotlight .carousel-spotlight-preview-eyebrow {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: rgb(255 255 255 / 75%);
+}
+
+.carousel-spotlight .carousel-spotlight-slide-indicator button:disabled .carousel-spotlight-preview-eyebrow {
+  color: #fff;
+}
+
+.carousel-spotlight .carousel-spotlight-preview-title {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #fff;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --- Navigation buttons --- */
+.carousel-spotlight .carousel-spotlight-navigation-buttons {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-spotlight .carousel-spotlight-navigation-buttons button {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border-radius: 50%;
+  padding: 0;
+  background-color: rgb(255 255 255 / 20%);
+  transition: background-color 0.2s;
+  pointer-events: auto;
+}
+
+.carousel-spotlight .carousel-spotlight-navigation-buttons button:hover,
+.carousel-spotlight .carousel-spotlight-navigation-buttons button:focus-visible {
+  background-color: rgb(255 255 255 / 40%);
+}
+
+.carousel-spotlight .carousel-spotlight-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid #fff;
+  border-bottom: 0;
+  border-left: 0;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-spotlight .carousel-spotlight-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+/* --- Desktop: two-column featured layout --- */
+@media (width >= 900px) {
+  .carousel-spotlight .carousel-spotlight-slide {
+    flex-direction: row-reverse;
+    align-items: stretch;
+    gap: 48px;
+    min-height: 471px;
+  }
+
+  .carousel-spotlight .carousel-spotlight-slide-content {
+    flex: 1 1 0;
+    max-width: 544px;
+    padding: 0;
+  }
+
+  .carousel-spotlight .carousel-spotlight-slide-image {
+    flex: 0 0 471px;
+    max-width: 471px;
+  }
+
+  .carousel-spotlight .carousel-spotlight-slide-image img {
+    height: 471px;
+  }
+
+  .carousel-spotlight .carousel-spotlight-navigation-buttons {
+    left: -12px;
+    right: -12px;
+  }
+}

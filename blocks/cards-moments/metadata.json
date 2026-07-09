@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-moments",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-07-09T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.fifa.com/en",
+    "originPage": "FIFA homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "media-moments",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "horizontal rail of portrait media cards (image + optional NEW badge + caption)",
+    "buttonCount": 0,
+    "imageCount": 13
+  },
+  "reuseGuidance": {
+    "suitableFor": ["portrait video/story card rails", "media highlight galleries", "moment cards with badges"],
+    "notSuitableFor": ["text-heavy editorial cards", "match fixture cards", "small topic tiles"]
+  },
+  "usage": {
+    "pagesUsing": ["/en"],
+    "reuseCount": 1,
+    "lastUsed": "2026-07-09T00:00:00.000Z"
+  }
+}
