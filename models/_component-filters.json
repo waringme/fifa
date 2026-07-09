@@ -35,32 +35,20 @@
       "text",
       "title",
       "title-block",
-      "video"
+      "video",
+      "hero-promo",
+      "hero-banner",
+      "carousel-stories",
+      "carousel-spotlight",
+      "cards-match",
+      "cards-moments",
+      "cards-news",
+      "cards-promo",
+      "embed-external",
+      "table-ranking"
     ]
   },
   {
-    "id": "cards",
-    "components": [
-      "card"
-    ]
-  },
-  {
-    "id": "columns",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "button",
-      "dm-asset",
-      "dm-template",
-      "image",
-      "text",
-      "title",
-      "title-block",
-      "video"
-    ]
+    "...": "../blocks/*/_*.json#/filters"
   }
 ]

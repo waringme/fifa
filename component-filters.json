@@ -35,11 +35,69 @@
       "text",
       "title",
       "title-block",
-      "video"
+      "video",
+      "hero-promo",
+      "hero-banner",
+      "carousel-stories",
+      "carousel-spotlight",
+      "cards-match",
+      "cards-moments",
+      "cards-news",
+      "cards-promo",
+      "embed-external",
+      "table-ranking"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
+    ]
+  },
+  {
+    "id": "cards-match",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-moments",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-news",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-promo",
+    "components": [
+      "card"
     ]
   },
   {
     "id": "cards",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "carousel-spotlight",
+    "components": [
+      "carousel-spotlight-item"
+    ]
+  },
+  {
+    "id": "carousel-stories",
+    "components": [
+      "carousel-stories-item"
+    ]
+  },
+  {
+    "id": "carousel",
     "components": [
       "card"
     ]
@@ -53,14 +111,72 @@
   {
     "id": "column",
     "components": [
-      "button",
-      "dm-asset",
-      "dm-template",
-      "image",
       "text",
+      "image",
+      "button",
       "title",
-      "title-block",
+      "dm-asset",
       "video"
+    ]
+  },
+  {
+    "id": "form",
+    "components": [
+      "captcha",
+      "checkbox",
+      "checkbox-group",
+      "date-input",
+      "drop-down",
+      "email",
+      "file-input",
+      "form-accordion",
+      "form-button",
+      "form-fragment",
+      "form-image",
+      "form-modal",
+      "form-reset-button",
+      "form-submit-button",
+      "number-input",
+      "panel",
+      "password",
+      "plain-text",
+      "radio-group",
+      "rating",
+      "telephone-input",
+      "text-input",
+      "tnc",
+      "wizard",
+      "range"
+    ]
+  },
+  {
+    "id": "table-ranking",
+    "components": [
+      "table-ranking-row"
+    ]
+  },
+  {
+    "id": "table-ranking-2-columns",
+    "components": [
+      "table-ranking-col-2"
+    ]
+  },
+  {
+    "id": "table-ranking-3-columns",
+    "components": [
+      "table-ranking-col-3"
+    ]
+  },
+  {
+    "id": "table-ranking-4-columns",
+    "components": [
+      "table-ranking-col-4"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tabs-item"
     ]
   }
 ]
